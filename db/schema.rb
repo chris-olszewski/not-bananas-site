@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(version: 20150919191414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
-  enable_extension "pg_stat_statements"
-  enable_extension "unaccent"
 
   create_table "repo_files", force: :cascade do |t|
     t.string   "url"

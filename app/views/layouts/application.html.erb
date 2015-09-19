@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <% flash.each do |key, msg| %>
+    <div class="alert alert-<%= key %>"><%= msg.html_safe %></div>
+  <% end %>
+
 <%= yield %>
 
 </body>
