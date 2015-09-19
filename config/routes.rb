@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get '/' => 'projects#index'
+  root 'landing#index'
 
-  get 'show' => 'projects#show'
+  resources :projects do
+  end
 
-  root 'projects#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
