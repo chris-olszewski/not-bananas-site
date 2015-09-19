@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "httparty"
+require "json"
+
+puts "this will do stuff sometime"
+# ping not-bananas api for changes
+
+# download files (remember version) to the correct place on disk to overwrite old files
