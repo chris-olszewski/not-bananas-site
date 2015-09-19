@@ -11,10 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919191414) do
+ActiveRecord::Schema.define(version: 20150919233443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+  enable_extension "pg_stat_statements"
+  enable_extension "unaccent"
 
   create_table "repo_files", force: :cascade do |t|
     t.string   "url"
@@ -23,13 +26,16 @@ ActiveRecord::Schema.define(version: 20150919191414) do
     t.integer  "version"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "filename"
   end
 
   create_table "repositories", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "enabled",    default: false, null: false
+    t.string   "gh_name"
   end
 
   create_table "users", force: :cascade do |t|
