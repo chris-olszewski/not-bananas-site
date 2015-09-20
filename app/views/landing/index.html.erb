@@ -1,2 +1,50 @@
-<p>This will be the landing page</p>
-<%= link_to "Sign in with GitHub", "/auth/github" %>
+<div id="mainwrapper">
+  <header>
+    <!--**************************************************************************
+    Header
+    ****************************************************************************-->
+    <div id="logo">
+      <%= image_tag 'logo2.png', class: 'header-logo' %>
+    </div>
+    <nav> <%= link_to "Sign in with GitHub", "/auth/github" %> <a href="#" title="Link">Get Started</a> <a href="#" title="Link">Buy</a></nav>
+  </header>
+  <div id="content">
+
+    <section id="mainContent">
+      <!--************************************************************************
+    Main Blog
+    ****************************************************************************-->
+      <aside id="mainExcerpt">
+        <!-- The author information is contained here -->
+        <h2>The world's only banana that is not a banana.</h2>
+        <div id="bannerImage">
+          <%= image_tag 'banana.jpg', class: "banana.jpg" %>
+        </div>
+
+        <p>The life is jank. This is where we explain what this shitty shit is. Something like "the coolest shit you'll ever see simulator 2016" or something like that. ok bye.</p>
+      </aside>
+      <aside id="gettingStarted">
+      <h2>Getting Started</h2>
+      <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+      <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+      <p style="padding-bottom: 16px;">3. m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+      </aside>
+
+    </section>
+
+    <footer>
+      <!--************************************************************************
+    Footer starts here
+    ****************************************************************************-->
+      <article>
+        <h3>Other Steps</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+      <article>
+        <h3>Pricing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+    </footer>
+  </div>
+  <div id="footerbar">&copy; 2015 <i>Not</i> Bananas</div>
+</div>

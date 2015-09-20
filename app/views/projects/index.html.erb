@@ -1,3 +1,70 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
-<p>Presumably we'd have a list of the different projects, and then each would link to a show page which whould allow you to enable it.</p>
+<div id="mainwrapper">
+  <header>
+    <!--**************************************************************************
+    Header
+    ****************************************************************************-->
+    <div id="logo">
+      <%= image_tag 'logo2.png', class: 'header-logo' %>
+    </div>
+    <nav> <a href="#" title="Link">Get Started</a> <a href="#" title="Link">Buy</a></nav>
+  </header>
+  <div id="content">
+
+    <div id="mainContent">
+      <!--************************************************************************
+    Main Blog
+    ****************************************************************************-->
+      <div id="mainExcerpt">
+
+        <h2></h2>
+        <h1 class="project-title">Your Projects</h1>
+        <div class="content-container">
+          <ul>
+            <li class="project-item">
+              <span>Project Name</span>
+              <%= check_box_tag "activate-url", class: "activate-url" %>
+            </li>
+            <li class="project-item">
+              <span>Project Name</span>
+              <%= check_box_tag "activate-url", class: "activate-url" %>
+            </li>
+            <li class="project-item">
+              <span>Project Name</span>
+              <%= check_box_tag "activate-url", class: "activate-url" %>
+            </li>
+            <li class="project-item">
+              <span>Project Name</span>
+              <%= check_box_tag "activate-url", class: "activate-url" %>
+            </li>
+          </ul>
+        </div>
+        <%= button_tag "Add Project", class: 'create-url-button' %>
+        <h2></h2>
+      </div>
+
+
+      <!-- <div id="gettingStarted">
+      <!-- <h2>Getting Started</h2> -->
+      <!-- <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p> -->
+      <!-- <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p> -->
+      <p style="padding-bottom: 16px;">3. m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+    </div>
+
+  </div>
+
+    <footer>
+      <!--************************************************************************
+    Footer starts here
+    ****************************************************************************-->
+      <article>
+        <h3>Other Steps</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+      <article>
+        <h3>Pricing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+    </footer>
+  </div>
+  <div id="footerbar">&copy; 2015 <i>Not</i> Bananas</div>
+</div>
