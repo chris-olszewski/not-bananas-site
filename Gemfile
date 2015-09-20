@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -30,7 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 
 gem 'octokit', '~> 4.0'
-gem 'httparty'
+gem 'devise', '~> 3.5.2'
+gem 'rest-client'
+gem 'omniauth-github', '1.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,3 +44,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end

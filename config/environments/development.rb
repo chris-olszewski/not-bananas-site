@@ -1,3 +1,6 @@
+credentials =  File.expand_path('../../credentials.rb', __FILE__)
+require credentials if File.exists?(credentials)
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -38,4 +41,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_dispatch.perform_deep_munge = false
 end

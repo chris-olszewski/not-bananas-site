@@ -1,0 +1,63 @@
+<div id="mainwrapper">
+  <header>
+    <!--**************************************************************************
+    Header
+    ****************************************************************************-->
+    <div id="logo">
+      <%= image_tag 'logo2.png', class: 'header-logo' %>
+    </div>
+    <nav> <a href="#" title="Link">Get Started</a> <a href="#" title="Link">Buy</a></nav>
+  </header>
+  <div id="content">
+
+    <div id="mainContent">
+      <!--************************************************************************
+    Main Blog
+    ****************************************************************************-->
+      <div id="mainExcerpt">
+
+        <h2></h2>
+        <h1 class="project-title">Your Projects</h1>
+        <div class="content-container">
+          <ul>
+            <% @repositories.each do |repo| %>
+            <li class="project-item">
+              <span><%= repo.full_name %></span>
+              <% if repo.enabled %>
+              <p>This repo is already not bananas!</p>
+              <% else %>
+              <%= link_to "Enable Not Bananas", projects_path(gh_name: repo.full_name), method: 'POST' %>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <h2></h2>
+      </div>
+
+
+      <!-- <div id="gettingStarted">
+      <!-- <h2>Getting Started</h2> -->
+      <!-- <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p> -->
+      <!-- <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p> -->
+      <!-- <p style="padding-bottom: 16px;">3. m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p> -->
+    </div>
+
+  </div>
+
+    <footer>
+      <!--************************************************************************
+    Footer starts here
+    ****************************************************************************-->
+      <article>
+        <h3>Other Steps</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+      <article>
+        <h3>Pricing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+    </footer>
+  </div>
+  <div id="footerbar">&copy; 2015 <i>Not</i> Bananas</div>
+</div>
