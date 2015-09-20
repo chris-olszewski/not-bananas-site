@@ -4,9 +4,9 @@
     Header
     ****************************************************************************-->
     <div id="logo">
-      <%= image_tag 'logo2.png', class: 'header-logo' %>
+      <a href='/'><%= image_tag 'logo2.png', class: 'header-logo', style: "max-height: 50%; max-width: 40%; padding-top: 10px; padding-left:31%"%></a>
     </div>
-    <nav> <a href="#" title="Link">Get Started</a> <a href="#" title="Link">Buy</a></nav>
+    <nav><%= link_to "Sign in with GitHub", "/auth/github" %></nav>
   </header>
   <div id="content">
 
@@ -43,12 +43,13 @@
     Footer starts here
     ****************************************************************************-->
       <article>
-        <h3>Other Steps</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h3>Contact Us</h3>
+        <!-- <p>821 Johnson street</p> -->
+        <p>contactus@notbananas.com</p>
       </article>
       <article>
         <h3>Pricing</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Flat and Simple: $5 a month</p>
       </article>
     </footer>
   </div>
