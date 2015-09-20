@@ -22,5 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-* 
-I wonder if this will work...
+* all is death
+:(
