@@ -8,8 +8,7 @@ class RepoFile < ActiveRecord::Base
     content = Base64.decode64(client.contents(repository.gh_name, path: filename).content)
     if access_key
       jsfs_update = RestClient.put(jsfs_update_url, { :body => content, :content_type => 'text/plain' })
-      byebug
-      update_attributes(version: jsfs_update[:headers]['x-version'])
+      #update_attributes(version: jsfs_update[:headers]['x-version'])
     else
       create_jsfs content
       update_attributes(version: 0)
