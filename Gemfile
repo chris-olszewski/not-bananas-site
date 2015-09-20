@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 
 gem 'octokit', '~> 4.0'
+gem 'sequel'
 gem 'devise', '~> 3.5.2'
 gem 'rest-client'
 gem 'omniauth-github', '1.1.2'

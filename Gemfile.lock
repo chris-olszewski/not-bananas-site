@@ -66,15 +66,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-<<<<<<< HEAD
-    httparty (0.13.5)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
-=======
     hashie (3.4.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
->>>>>>> 65a04a3438c12b2c7a0c54ef702c71b1ec14c89c
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -170,6 +164,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sequel (4.26.0)
     spring (1.4.0)
     sprockets (3.3.4)
       rack (~> 1.0)
@@ -205,11 +200,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
-  httparty
-=======
   devise (~> 3.5.2)
->>>>>>> 65a04a3438c12b2c7a0c54ef702c71b1ec14c89c
   jbuilder (~> 2.0)
   jquery-rails
   octokit (~> 4.0)
@@ -220,6 +211,7 @@ DEPENDENCIES
   rest-client
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sequel
   spring
   turbolinks
   uglifier (>= 1.3.0)
