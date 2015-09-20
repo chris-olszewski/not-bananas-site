@@ -13,4 +13,4 @@ res = RestClient.get url
 
 filepath = url.gsub(/http:\/\/[\d\w:]*\/\d*\//, '')
 
-File.open(filepath, 'w') { |file| file.write URI::decode(res.body) }
+File.open(filepath, 'w') { |file| file.write URI::decode(res.body).gsub(/^body=|\&content_type=text\/plain$/, '') }
