@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'octokit', '~> 4.0'
 gem 'devise', '~> 3.5.2'
+gem 'omniauth-github', '1.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

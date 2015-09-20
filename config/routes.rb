@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root 'landing#index'
+  root to: 'landing#index'
 
   resources :projects do
   end
+
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

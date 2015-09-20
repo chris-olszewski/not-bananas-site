@@ -1,3 +1,6 @@
+credentials =  File.expand_path('../../credentials.rb', __FILE__)
+require credentials if File.exists?(credentials)
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
