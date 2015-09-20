@@ -19,8 +19,9 @@
 body
 {
 	margin: 0;
-	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	background-color: #3C3C3C;
+	font-family:montserrat,sans-serif;
+	/*background-color: #3C3C3C;*/
+	background-color: white;
 }
 
 p
@@ -33,6 +34,11 @@ p
 	background-color: #FFFD56;
 	color: #3C3C3C;
 	margin-top: -24px;
+}
+
+#gettingStarted h2
+{
+	font-size: 35px;
 }
 
 #mainwrapper header
@@ -49,6 +55,8 @@ p
 	font-style: normal;
 
 	font-weight: 400;
+
+	border-bottom-style: solid;
 
 }
 
@@ -136,19 +144,19 @@ header nav a
 
 	color: #3C3C3C;
 
-	font-family: source-sans-pro, sans-serif;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 
 	font-style: normal;
 
 	font-weight: 200;
 
-	text-align: justify;
+	text-align: center;
 
 	padding-left: 100px;
 	padding-right: 100px;
 	padding-bottom: 10px;
 
-	font-size:20px;
+	font-size:30px;
 
 }
 
@@ -210,7 +218,7 @@ footer article  {
 
 	background-color: #3C3C3C;
 
-	margin-top: -5px;
+	margin-top: -30	px;
 
 
 }
@@ -235,6 +243,7 @@ footer article h3  {
 	/*width: 71%;*/
 
 	float: left;
+	margin-bottom:-30px;
 
 }
 
