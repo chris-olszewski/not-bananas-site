@@ -11,7 +11,6 @@ class ProjectsController < ApplicationController
     if @project
       params[:commits].each do |commit|
         commit[:modified].select { |f| f =~ /views\/*/ }.each do |changed_file|
-          # change the file model
           RepoFile.where({ repository_id: params[:id], file_name: changed_file }).refresh!
         end
       end
