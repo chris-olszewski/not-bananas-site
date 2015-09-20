@@ -20,25 +20,18 @@
         <h1 class="project-title">Your Projects</h1>
         <div class="content-container">
           <ul>
+            <% @repositories.each do |repo| %>
             <li class="project-item">
-              <span>Project Name</span>
-              <%= check_box_tag "activate-url", class: "activate-url" %>
+              <span><%= repo.full_name %></span>
+              <% if repo.enabled %>
+              <p>This repo is already not bananas!</p>
+              <% else %>
+              <%= link_to "Enable Not Bananas", projects_path(gh_name: repo.full_name), method: 'POST' %>
+              <% end %>
             </li>
-            <li class="project-item">
-              <span>Project Name</span>
-              <%= check_box_tag "activate-url", class: "activate-url" %>
-            </li>
-            <li class="project-item">
-              <span>Project Name</span>
-              <%= check_box_tag "activate-url", class: "activate-url" %>
-            </li>
-            <li class="project-item">
-              <span>Project Name</span>
-              <%= check_box_tag "activate-url", class: "activate-url" %>
-            </li>
+            <% end %>
           </ul>
         </div>
-        <%= button_tag "Add Project", class: 'create-url-button' %>
         <h2></h2>
       </div>
 
