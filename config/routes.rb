@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   resources :projects do
+    member do
+      post 'hook'
+    end
   end
 
   get '/auth/:provider/callback' => 'sessions#create'

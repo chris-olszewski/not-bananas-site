@@ -1,27 +1,29 @@
+require 'rest-client'
+
 class RepoFile < ActiveRecord::Base
   belongs_to :repository
 
-  before_create :create_jsfs
-
   def refresh!
-    response = HTTParty.get(build_url)
-    jsfs_update = HTTParty.put(jsfs_update_url, { body: response[:body] })
-    update_attributes({ version: jsfs_update[:headers]['x-version'] })
+    client = Octokit::Client.new(access_token: repository.user.token)
+    content = Base64.decode64(client.contents(repository.gh_name, path: filename).content)
+    if access_key
+      jsfs_update = RestClient.put(jsfs_update_url, { :body => content, :content_type => 'text/plain' })
+      byebug
+      update_attributes(version: jsfs_update[:headers]['x-version'])
+    else
+      create_jsfs content
+      update_attributes(version: 0)
+    end
   end
 
   private
-  def build_url
-    @github_url = "https://raw.githubusercontent.com/#{repository.gh_name}/#{filename}?token=#{repository.user.token}"
-  end
-
   def jsfs_update_url
     "#{url}?access_key=#{access_key}"
   end
 
-  def create_jsfs
-    response = HTTParty.get(build_url)
+  def create_jsfs content
     jsfs_url = "#{ENV['JSFS_URL']}/#{repository.id}/#{filename}"
-    jsfs_create = HTTParty.post(jsfs_url, { body: response[:body] })
-    self.url = jsfs_url
+    jsfs_create = RestClient.post(jsfs_url, { :body => content, :content_type => 'application/plain' })
+    update_attributes(url: jsfs_url, access_key: JSON.parse(jsfs_create.body)['access_key'])
   end
 end

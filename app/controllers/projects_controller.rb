@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  before_action :load_project, only: [:update]
   before_action :octokit_client, only: [:index, :create]
 
   def index
@@ -12,7 +11,7 @@ class ProjectsController < ApplicationController
                         params[:gh_name],
                         'web',
                         {
-                          url: "#{request.url.split('?').first}/#{repository.id}",
+                          url: "#{request.url.split('?').first}/#{repository.id}/hook",
                           content_type: 'json'
                         },
                         {
@@ -22,21 +21,21 @@ class ProjectsController < ApplicationController
     redirect_to :back
   end
 
-  def update
-    if @project
+  def hook
+    project = Repository.find(params[:id])
+    if project
       params[:commits].each do |commit|
-        commit[:modified].select { |f| f =~ /views\/*/ }.each do |changed_file|
-          RepoFile.where({ repository_id: params[:id], file_name: changed_file }).refresh!
+        commit[:modified].select { |f| f =~ /views\/*|README\.md/ }.each do |changed_file|
+          file = RepoFile.where({ repository_id: params[:id], filename: changed_file }).try(:first)
+          file = RepoFile.create({ repository_id: params[:id], filename: changed_file }) if file.nil?
+          file.refresh!
         end
       end
     end
+    render nothing: true
   end
 
   private
-  def load_project
-    @project = Repository.find(params[:id])
-  end
-
   def octokit_client
     @client = Octokit::Client.new(:access_token => current_user.token)
   end
