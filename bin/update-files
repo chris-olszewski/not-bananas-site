@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "rest-client"
+require "sequel"
+
+DB = Sequel.connect 'postgres://chris:password@localhost:5432/github-cms_development' # ENV['DATABASE_URL']
+
+urls = DB['SELECT url FROM repo_files ORDER BY updated_at DESC limit 1']
+
+url = urls.map(:url).first
+
+res = RestClient.get url
+
+filepath = url.gsub(/http:\/\/[\d\w:]*\/\d*\//, '')
+
+File.open(filepath, 'w') { |file| file.write URI::decode(res.body) }
